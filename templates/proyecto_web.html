@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuida el Agua</title>
+  <link rel="stylesheet" href="../style/estilo.css">
+</head>
+<body>
+  <header>
+    <h1>Cuida el Agua</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#juegos">Juegos</a></li>
+        <li><a href="#consejos">Consejos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>¿Por qué es importante el agua?</h2>
+      <p>El agua es esencial para todos los seres vivos. Cuidarla garantiza un futuro mejor para el planeta.</p>
+      <img src="2.jpg" alt="Niño regando plantas">
+    </section>
+
+    <section>
+      <h2>¿Dónde usamos el agua?</h2>
+      <table>
+        <tr><th>Lugar</th><th>Uso del Agua</th></tr>
+        <tr><td>Casa</td><td>Lavar, cocinar, bañarse</td></tr>
+        <tr><td>Escuela</td><td>Beber, limpiar, regar jardines</td></tr>
+        <tr><td>Parques</td><td>Fuentes, juegos de agua</td></tr>
+      </table>
+    </section>
+
+    <section id="juegos">
+      <h2>Juegos Educativos</h2>
+      <p>Próximamente: juegos divertidos para aprender a cuidar el agua mientras juegas.</p>
+      <img src="1.jpg" alt="Ilustración de juego sobre agua">
+    </section>
+
+    <section id="consejos">
+      <h2>Consejos para Cuidar el Agua</h2>
+      <ul>
+        <li>Cierra el grifo mientras te cepillas los dientes.</li>
+        <li>Usa un vaso para enjuagarte.</li>
+        <li>Repara fugas lo antes posible.</li>
+        <li>Riega las plantas por la noche o temprano.</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <!-- ✅ Se actualizó el action -->
+      <form action="../guardar.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Más Información</h2>
+      <p>Visita el sitio oficial de la ONU para conocer más sobre el <a href="https://www.un.org/es/observances/water-day" target="_blank">Día Mundial del Agua</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cuida el Agua. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Página cargada correctamente.");
+    });
+
+    // Efecto al pasar por encima de secciones
+    const sections = document.querySelectorAll("section");
+    sections.forEach(sec => {
+      sec.addEventListener("mouseenter", () => {
+        sec.style.backgroundColor = "#f9fff9";
+      });
+      sec.addEventListener("mouseleave", () => {
+        sec.style.backgroundColor = "transparent";
+      });
+    });
+  </script>
+</body>
+</html>
+
+</html>
