@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../style/estilo.css">
+</head>
+<body>
+
+  <form class="registro-form" action="../guardar_usuario.php" method="POST">
+    <h2>Crear cuenta</h2>
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+    <input type="text" name="usuario" placeholder="Nombre de usuario" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <input type="password" name="confirmar" placeholder="Confirmar contraseña" required>
+    <button type="submit">Registrarse</button>
+  </form>
+
+</body>
+</html>

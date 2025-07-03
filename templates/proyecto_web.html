@@ -17,6 +17,13 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <!-- 🔐 Botones de login y registro -->
+    <div class="auth-container">
+  <span id="usuarioNombre">Invitado</span>
+  <button id="loginBtn">Iniciar sesión</button>
+  <button id="registroBtn">Registrarse</button>
+</div>
+
   </header>
 
   <main>
@@ -54,8 +61,7 @@
 
     <section id="contacto">
       <h2>Contáctanos</h2>
-      <!-- ✅ Se actualizó el action -->
-      <form action="../guardar.php" method="post">
+      <form action="../guardar.registro.php" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -77,11 +83,9 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("Página cargada correctamente.");
-    });
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("Página cargada correctamente.");
 
-    // Efecto al pasar por encima de secciones
     const sections = document.querySelectorAll("section");
     sections.forEach(sec => {
       sec.addEventListener("mouseenter", () => {
@@ -91,8 +95,35 @@
         sec.style.backgroundColor = "transparent";
       });
     });
-  </script>
-</body>
-</html>
 
+    const loginBtn = document.getElementById("loginBtn");
+    const registroBtn = document.getElementById("registroBtn");
+    const usuarioNombre = document.getElementById("usuarioNombre");
+
+    // Mostrar nombre desde localStorage
+    const usuarioGuardado = localStorage.getItem("usuario");
+    if (usuarioGuardado) {
+      usuarioNombre.textContent = usuarioGuardado;
+    }
+
+    loginBtn.addEventListener("click", () => {
+      const usuario = prompt("Usuario:");
+      const contraseña = prompt("Contraseña:");
+      if (usuario && contraseña) {
+        // ⚠️ Aquí iría validación real con PHP, pero por ahora es solo demostrativo
+        alert("¡Bienvenido, " + usuario + "!");
+        localStorage.setItem("usuario", usuario);
+        usuarioNombre.textContent = usuario;
+      } else {
+        alert("Debes ingresar ambos campos.");
+      }
+    });
+
+    registroBtn.addEventListener("click", () => {
+      window.location.href = "registro.html";
+    });
+  });
+</script>
+
+</body>
 </html>
